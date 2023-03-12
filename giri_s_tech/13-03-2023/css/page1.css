@@ -1,0 +1,242 @@
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('../fonts/roboto/Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'test-Regular';
+    src: url('../fonts/roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'test-Bold';
+    src: url('../fonts/roboto/Roboto-Bold.ttf');
+}
+
+:root{
+    --primary-color: #d9c032;
+    --secondary-color: #ffffff;
+    --ternary-color: #fff19f;
+    --background-color: #d9c032;
+    --font-regular: 'Roboto-Regular';
+    --font-bold: 'Roboto-Bold';
+    --max-width: 550px;
+    --max-image-width: 200px;
+    --max-hr-width: 100px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background-color);
+}
+
+::selection {
+    background-color: var(--ternary-color);
+    color: var(--primary-color);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--secondary-color);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--ternary-color);
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes imageHover {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+h1{
+    font-family: var(--font-bold);
+    color: var(--secondary-color);
+    font-size: 3rem;
+    padding: 1rem;
+    padding-left: 0;
+}
+
+h6{
+    font-family: var(--font-regular);
+    color: var(--secondary-color);
+    font-size: 1rem;
+    padding: 1rem 0;
+    text-align: end;
+    max-width: var(--max-width);
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+button{
+    font-family: var(--font-regular);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    text-align: center;
+    padding: .75rem;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 0.25rem;
+    width: 100%;
+    max-width: var(--max-width);
+    cursor: pointer;
+}
+
+button:hover{
+    box-shadow: 0 0 0 2px var(--secondary-color);
+}
+
+p{
+    font-family: var(--font-regular);
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    text-align: end;
+}
+
+input, textarea{
+    font-family: var(--font-regular);
+    color: var(--secondary-color);
+    font-size: 1rem;
+    padding: .75rem;
+    background-color: var(--primary-color);
+    border: none;
+    border-bottom: 1px solid var(--secondary-color);
+    min-width: var(--max-width);
+    max-width: 100%;
+    margin-bottom: 2rem;
+    resize: none;
+}
+
+input::placeholder, textarea::placeholder{
+    color: var(--ternary-color);
+}
+
+input:focus, textarea:focus{
+    outline: none;
+}
+
+
+
+label{
+    font-family: var(--font-regular);
+    color: var(--secondary-color);
+    font-size: 1rem;
+    padding: 0;
+}
+
+img{
+    width: 100%;
+    max-width: var(--max-image-width);
+    border-radius: 100%;
+    transition: transform 1250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+img:hover, img:focus{
+    transform: scale(2)
+}
+
+hr{
+    border: 1px solid var(--secondary-color);
+    width: 100%;
+    max-width: var(--max-hr-width);
+    margin: 1rem 0 2rem auto;
+}
+
+i{
+    color: var(--secondary-color);
+    padding: .5rem;
+}
+
+i:hover{
+    animation: zoomIn 2s infinite;
+}
+
+span{
+    color: var(--ternary-color);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+a{
+    color: var(--ternary-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ternary-color);
+}
+a:hover{
+    color: var(--secondary-color);
+}
+
+
+/* Custom CSS */
+.d-flex{
+    min-height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.flex-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.flex-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.img{
+    width: 100%;
+    max-width: var(--max-image-width);
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+@media screen and (max-width: 1200px){
+    .d-flex{
+        min-height: 100vh;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .flex-right{
+        align-items: center;
+    }
+    h6{
+        text-align: center;
+    }
+    hr{
+        margin: 1rem auto;
+    }
+}
